@@ -1,0 +1,38 @@
+{
+  "name": "faux-i2c",
+  "version": "1.0.0",
+  "description": "Mock I2C interface for unit testing devices that communicate over I2C",
+  "main": "FauxI2C.js",
+  "scripts": {
+    "clean": "rm -rf .nyc_output coverage",
+    "test": "node_modules/.bin/mocha -R spec test",
+    "cover": "node_modules/.bin/nyc node_modules/mocha/bin/_mocha --exit",
+    "lint": "node_modules/.bin/eslint .",
+    "report": "npm run cover && npm run lint"
+  },
+  "keywords": [
+    "I2C",
+    "unit",
+    "testing",
+    "mock"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kfitzgerald/faux-i2c.git"
+  },
+  "author": "Kevin M. Fitzgerald",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.0",
+    "nyc": "^11.6.0",
+    "should": "^13.2.1"
+  },
+  "nyc": {
+    "reporter": [
+      "text-summary",
+      "html",
+      "lcovonly"
+    ]
+  }
+}
